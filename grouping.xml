@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Master Suite">
+
+<!-- groups should be placed before test tags NOTE: Any additional tags like groups, listeners etc...-->
+<groups>
+<run>
+<include name="Master"/> 
+<!-- <include name="Sanity"/> -->
+<!-- <include name="Regression"/> -->
+<!-- <exclude name=""/>  -->
+<!-- Include contains the groups in the run, exclude avoids the groups in the run-->
+</run>
+</groups>
+<listeners>
+       <listener class-name="utilities.ExtentReportManager"/>
+</listeners> 
+
+<!--  Adding OS and Browser for test Cases package and to fetch the parameters into base class as it have the launcher -->
+  <test thread-count="5" name="Test">
+  <parameter name="os" value="Windows"/>
+  <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="testCases.TC_0001_AccountRegistrationTest"/>
+     <class name="testCases.TC_0002_LoginTest"/> 
+     <!-- <class name="testCases.TC_0003_LoginDDT"/> -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="5" name="Suite" parallel="tests">
+<!--  Having individual tests for different browsers in which we can execute sequentially or parallel ly in all the browsers at a time -->
+<!-- This test is done in a single shot i.e. at last after all the individual modules are passed and check the script is compatible with all the browsers-->
+  <test name="ChromeTest">
+  <parameter name="os" value="Windows"/>
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testCases.TC_0001_AccountRegistrationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="EdgeTest">
+  <parameter name="os" value="Windows"/>
+  <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="testCases.TC_0001_AccountRegistrationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="FirefoxTest">
+  <parameter name="os" value="Windows"/>
+  <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testCases.TC_0001_AccountRegistrationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->
